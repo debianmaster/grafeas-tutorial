@@ -17,6 +17,11 @@ gcloud alpha container clusters create grafeas \
   --enable-kubernetes-alpha \
   --cluster-version 1.8.0-gke.1
 ```
+if you would like to use minikube >= v0.22.3
+```
+minikube start --kubernetes-version v1.8.0 \   
+  --extra-config=apiserver.Admission.PluginNames="GenericAdmissionWebhook"
+```
 
 > Any Kubernetes 1.8 cluster with support for external admission webhooks will work. 
 
